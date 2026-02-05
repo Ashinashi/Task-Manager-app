@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Task Manager</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body class="dark-theme">
+    <div class="auth-container">
+        <h1>Register</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="social-login">
+            <p>Or continue with</p>
+            <div class="social-icons">
+                <img src="{% static 'icons/google.png' %}" alt="Google">
+                <img src="{% static 'icons/facebook.png' %}" alt="Facebook">
+                <img src="{% static 'icons/apple.png' %}" alt="Apple">
+            </div>
+        </div>
+
+        <p>Already have an account? <a href="/login/">Login</a></p>
+    </div>
+</body>
+</html>

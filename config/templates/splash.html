@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body class="dark-theme">
+    <div class="splash-container">
+        <h1>Task Manager</h1>
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // Redirect to login page after 2 seconds
+        setTimeout(() => {
+            window.location.href = "/login/";
+        }, 2000);
+    </script>
+</body>
+</html>
+
+
+
